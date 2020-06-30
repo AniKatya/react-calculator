@@ -1,0 +1,24 @@
+.display-main {
+    background-color: #222;
+    width: calc(100% - 40px);
+    position: relative;
+    left: 15px;
+    top: 30px;
+    height: 90px;
+    border-radius: 15px;
+    margin-bottom: 20%;
+}
+
+.display-main input {
+    position: relative;
+    width: 100%;
+    left: 2px;
+    top: 2px;
+    height: 80px;
+    color: black;
+    background-color: #bccd95;
+    font-size: 21px;
+    text-align: right;
+    border-radius: 10px;
+
+}
