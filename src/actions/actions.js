@@ -6,7 +6,6 @@ export const toAddOperator = (operator) => {
 };
 
 export const toSaveInput = (number) => {
-  console.log("action is invoked");
   return {
     type: "SAVE_INPUT",
     payload: number,

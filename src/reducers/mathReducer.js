@@ -11,14 +11,21 @@ export default (state = INITIAL_STATE, action) => {
       if (!state.operator) {
         return { ...state, firstArgument: state.firstArgument + action.payload };
       } else {
-        return { ...state, secondArgument: state.secondArgument + state.action.payload };
+        return { ...state, secondArgument: state.secondArgument + action.payload };
       }
     case "ADD_OPERATOR":
       return { ...state, operator: action.payload };
     case "CLEAR_ALL":
       return { ...state, firstArgument: "", operator: "", secondArgument: "", currentResult: "" };
     case "SHOW_RESULT":
-      return { ...state, currentResult: state.firstArgument + state.operator + state.secondArgument };
+      let result = eval(state.firstArgument + state.operator + state.secondArgument);
+      return {
+        ...state,
+        operator: "=",
+        currentResult: result,
+        firstArgument: result,
+        secondArgument: "",
+      };
     default:
       return state;
   }

@@ -5,12 +5,16 @@ import "../css/display.css";
 
 class Display extends React.Component {
   toRenderValue=()=>{
-    if (this.props.operator&&this.props.operator!=="="){
+    if (this.props.operator&&this.props.operator!=="="&&!this.props.currentResult){
+      console.log("first is invoked");
       return this.props.secondArgument
-    } else if (this.props.operator === "="){
+    } else if (this.props.operator ==="="){
+      console.log("show result is invoked");
       return this.props.currentResult
     } else {
+      console.log("third is invoked");
       return this.props.firstArgument
+
     }
   }
 
