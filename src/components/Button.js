@@ -6,6 +6,18 @@ import "../css/button.css";
 import "../css/buttonboard.css";
 
 function Button(props) {
+  const avoidDuplicate=(key)=>{
+    if (props.operator && props.secondArgument !== key) {
+      props.toSaveInput(key);
+    } else if (props.operator && props.secondArgument === key) {
+        return null
+    } else if (!props.operator && props.firstArgument !== key) {
+      props.toSaveInput(key);
+    } else if (props.operator && props.firstArgument === key) {
+        return null
+    }
+}
+
   const handleClick = (key) => {
     switch (key) {
       case "C":
@@ -20,6 +32,12 @@ function Button(props) {
       case "=":
         props.toShowResult();
         break;
+      case "0":
+        avoidDuplicate(key);
+        break;
+      case ".":
+        avoidDuplicate(key);
+        break;
       default:
         props.toSaveInput(key);
         break;
@@ -32,4 +50,14 @@ function Button(props) {
   );
 }
 
-export default connect(null, { toAddOperator, toSaveInput, toShowResult, toDelete })(Button);
+const mapStateToProps = (state) => {
+  return {
+    firstArgument: state.math.firstArgument,
+    secondArgument: state.math.secondArgument,
+    operator: state.math.operator,
+  };
+};
+
+export default connect(mapStateToProps, { toAddOperator, toSaveInput, toShowResult, toDelete })(
+  Button
+);

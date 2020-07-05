@@ -13,7 +13,7 @@
     font-family: 'CalculatorFont';
     src: local('Orbitron'), url(../fonts/Orbitron-Medium.ttf) format('truetype');
   }
-.display-main input {
+input {
     position: relative;
     width: 100%;
     left: 2px;
@@ -21,9 +21,8 @@
     height: 80px;
     color: black;
     background-color: #bccd95;
-    font-size: 21px;
     text-align: right;
     border-radius: 10px;
     font-family: CalculatorFont;
-
+    font-size: 1.5em;
 }

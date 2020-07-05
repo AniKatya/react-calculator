@@ -10,7 +10,7 @@ export default (state = INITIAL_STATE, action) => {
     case "SAVE_INPUT":
       if (!state.operator) {
         return { ...state, firstArgument: state.firstArgument + action.payload };
-      } else {
+      } else{
         return { ...state, secondArgument: state.secondArgument + action.payload };
       }
     case "ADD_OPERATOR":
@@ -21,10 +21,10 @@ export default (state = INITIAL_STATE, action) => {
       let result = eval(state.firstArgument + state.operator + state.secondArgument);
       return {
         ...state,
-        operator: "=",
         currentResult: result,
+        operator: "",
         firstArgument: result,
-        secondArgument: "",
+        secondArgument: ""
       };
     default:
       return state;

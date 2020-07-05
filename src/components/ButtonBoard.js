@@ -19,7 +19,7 @@ export default function ButtonBoard() {
         ))}
       </span>
       <Button key="0" value="0" className="null-button" />
-      <Button key="," value="," className="decimal-button" />
+      <Button key="." value="." className="decimal-button" />
       <Button key="=" value="=" className="equality-button" />
     </div>
   );
