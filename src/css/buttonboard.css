@@ -1,7 +1,7 @@
 .button-board-main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5,60px);
+    grid-template-rows: repeat(5,10vh);
     row-gap: 20px;
     column-gap: 20px;
     margin: 20px;

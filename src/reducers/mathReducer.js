@@ -10,7 +10,7 @@ export default (state = INITIAL_STATE, action) => {
     case "SAVE_INPUT":
       if (!state.operator) {
         return { ...state, firstArgument: state.firstArgument + action.payload };
-      } else{
+      } else {
         return { ...state, secondArgument: state.secondArgument + action.payload };
       }
     case "ADD_OPERATOR":
@@ -18,13 +18,18 @@ export default (state = INITIAL_STATE, action) => {
     case "CLEAR_ALL":
       return { ...state, firstArgument: "", operator: "", secondArgument: "", currentResult: "" };
     case "SHOW_RESULT":
-      let result = eval(state.firstArgument + state.operator + state.secondArgument);
+      let result = 0;
+      if (state.secondArgument) {
+        result = eval(state.firstArgument + state.operator + state.secondArgument);
+      } else {
+        result = state.firstArgument;
+      }
       return {
         ...state,
         currentResult: result,
         operator: "",
         firstArgument: result,
-        secondArgument: ""
+        secondArgument: "",
       };
     default:
       return state;

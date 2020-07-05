@@ -4,21 +4,22 @@
     position: relative;
     left: 15px;
     top: 30px;
-    height: 90px;
+    height: 16vh;
     border-radius: 15px;
-    margin-bottom: 20%;
+    margin-bottom: 15%;
 }
 
 @font-face {
     font-family: 'CalculatorFont';
     src: local('Orbitron'), url(../fonts/Orbitron-Medium.ttf) format('truetype');
-  }
+}
+
 input {
     position: relative;
     width: 100%;
     left: 2px;
     top: 2px;
-    height: 80px;
+    height: 15vh;
     color: black;
     background-color: #bccd95;
     text-align: right;
@@ -26,3 +27,4 @@ input {
     font-family: CalculatorFont;
     font-size: 1.5em;
 }
+

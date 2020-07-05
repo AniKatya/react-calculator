@@ -1,11 +1,16 @@
 .button {
     width: 100%;
-    height: 60px;
+    height: 10vh;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-family: CalculatorFont;
     font-size: 1.2em;
+}
+
+.button:focus {outline:0;}
+.button:active{
+    transform: translateY(3px);
 }
 
 .number-button,
@@ -52,5 +57,3 @@
     border-bottom: black 2px solid;
     grid-column: 4
 }
-
-
